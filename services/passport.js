@@ -26,10 +26,8 @@ passport.use(
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ googleId: profile.id }).then((existingUser) => {
         if (existingUser) {
-          // record with this id exists
           done(null, existingUser);
         } else {
-          // no record exists, make a new one
           new User({ googleId: profile.id })
             .save()
             .then((user) => done(null, user));
@@ -38,3 +36,4 @@ passport.use(
     },
   ),
 );
+
