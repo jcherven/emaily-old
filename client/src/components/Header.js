@@ -5,7 +5,7 @@ class Header extends Component {
     return (
       <nav>
         <div className="nav-wrapper">
-          <a href="/" className="left brand-logo">
+          <a href="/" className="brand-logo">
             Emaily
           </a>
           <ul className="right">
